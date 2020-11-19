@@ -66,9 +66,7 @@ app.post("/process_data",uploader.single("image"),(req,res)=>{
 });
 
 
- var server = app.listen(8080,()=>{
-     var host = server.address().address;
-     var port = server.address().port;
+ var server = app.listen(process.env.PORT,()=>{
 
-     console.log('I am listening to %s %s',host,port);
+     console.log("Listening");
  })
