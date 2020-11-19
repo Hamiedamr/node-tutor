@@ -66,7 +66,7 @@ app.post("/process_data",uploader.single("image"),(req,res)=>{
 });
 
 
- var server = app.listen(5000,()=>{
+ var server = app.listen(8080,()=>{
      var host = server.address().address;
      var port = server.address().port;
 
