@@ -3,7 +3,7 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var multer = require("multer");
 
-var con = require("./db_connection");
+//var con = require("./db_connection");
 var app = express();
 var urlParser = bodyParser.urlencoded({extended:false});
 app.use(express.static('pages'));
@@ -48,7 +48,7 @@ app.post("/process_data",uploader.single("image"),(req,res)=>{
             if(response.first_name == "" || response.last_name == ""){
                 throw err;
             }
-        con.connect((err)=> {
+      /* con.connect((err)=> {
             if (err) throw err;
             console.log("Connected!");
             var sql = "INSERT INTO users (firstname,lastname) VALUES (?)";
@@ -56,7 +56,7 @@ app.post("/process_data",uploader.single("image"),(req,res)=>{
             if (err) throw err;
             console.log("User Inserted");
             });
-        });
+        });*/
             return res.status(201).send(response)
     }catch(err){
         console.log("Error!");
